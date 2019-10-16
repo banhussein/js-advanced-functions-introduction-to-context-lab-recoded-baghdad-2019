@@ -52,11 +52,11 @@ function wagesEarnedOnDate(record,Date){
 
 
  let allWagesFor = function(record){
-    let eligibleDates = record.timeInEvents.map(function(e){
+    let allDates = record.timeInEvents.map(function(e){
         return e.date
     })
 
-    let payable = eligibleDates.reduce(function(memo, d){
+    let payable = allDates.reduce(function(memo, d){
         return memo + wagesEarnedOnDate(record, d)
     }, 0)
 
